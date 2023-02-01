@@ -27,7 +27,8 @@ bot.on("callback_query", function (query) {
     );
   } else {
     queries[query.id] = query;
-    let gameurl = "https://YOUR_URL_HERE/index.html?  id=" + query.id;
+    let gameurl =
+      "https://developaz.github.io/TestGameBot/public/?id=" + query.id;
     bot.answerCallbackQuery({
       callback_query_id: query.id,
       url: gameurl,
