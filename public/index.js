@@ -2269,7 +2269,7 @@ var playerid = url.searchParams.get("id");
       // Submit highscore to Telegram
       var xmlhttp = new XMLHttpRequest();
       var url =
-        "https://developaz.github.io/TestGameBot/public/highscore/" +
+        "https://developaz.github.io/TestGameBot/highscore/" +
         distance +
         "?id=" +
         playerid;

@@ -1,11 +1,11 @@
 const express = require("express");
 const path = require("path");
 const TelegramBot = require("node-telegram-bot-api");
-const TOKEN = "YOUR_API_TOKEN_GOES_HERE";
+const TOKEN = "6054939762:AAEbf-kl2-biIKyb6noepxiH4KPQp3x3LX0";
 const server = express();
 const bot = new TelegramBot(TOKEN, { polling: true });
 const port = process.env.PORT || 5000;
-const gameName = "SHORT_NAME_YOUR_GAME";
+const gameName = "testgame";
 const queries = {};
 
 server.use(express.static(path.join(__dirname, "public")));
@@ -43,6 +43,8 @@ bot.on("inline_query", function (iq) {
 });
 
 server.get("/highscore/:score", function (req, res, next) {
+  console.log("highscore");
+
   if (!Object.hasOwnProperty.call(queries, req.query.id)) return next();
   let query = queries[req.query.id];
   let options;
